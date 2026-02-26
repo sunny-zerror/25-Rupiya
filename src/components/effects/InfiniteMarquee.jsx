@@ -49,7 +49,7 @@ export default function InfiniteMarquee({
             }
 
             position.current += velocity.current;
-            velocity.current *= isTouchRef.current ? 0.98 : 0.95;
+            velocity.current *= isTouchRef.current ? 0.92 : 0.95;
 
             if (position.current <= -contentWidth) {
                 position.current += contentWidth;
