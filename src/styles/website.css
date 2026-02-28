@@ -1,0 +1,230 @@
+.hero-search-image-group > img {
+  --clamp-vw: 1vw;
+  border-radius: 1rem;
+  scale: 0;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  height: auto;
+}
+
+@media (max-width: 991px) {
+  .hero-search-image-group > img {
+    border-radius: 0.5rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .hero-search-image-group > img {
+    --clamp-vw: calc(1920px * 0.01);
+  }
+}
+
+.hero-search-image-group > img:first-child {
+  margin-top: -180px;
+  margin-left: -41vw;
+  width: calc(14 * var(--clamp-vw, 1vw));
+}
+
+@media (max-width: 767px) {
+  .hero-search-image-group > img:first-child {
+    margin-top: -190px;
+    margin-left: -34vw;
+    width: 100px;
+  }
+}
+
+.hero-search-image-group > img:nth-child(2) {
+  margin-top: 330px;
+  width: calc(17.8 * var(--clamp-vw, 1vw));
+}
+
+@media (max-width: 767px) {
+  .hero-search-image-group > img:nth-child(2) {
+    margin-top: 130px;
+    margin-left: 37vw;
+    width: 68px;
+  }
+}
+
+.hero-search-image-group > img:nth-child(3) {
+  margin-top: -110px;
+  margin-left: 43vw;
+  width: calc(19.5 * var(--clamp-vw, 1vw));
+}
+
+@media (max-width: 767px) {
+  .hero-search-image-group > img:nth-child(3) {
+    margin-top: 160px;
+    margin-left: -37vw;
+    width: 162px;
+  }
+}
+
+.hero-search-image-group > img:nth-child(4) {
+  margin-top: -160px;
+  margin-left: -13vw;
+  width: calc(6.5 * var(--clamp-vw, 1vw));
+}
+
+@media (max-width: 767px) {
+  .hero-search-image-group > img:nth-child(4) {
+    margin-top: -160px;
+    margin-left: 37vw;
+    width: 120px;
+  }
+}
+
+.hero-search-image-group > img:nth-child(5) {
+  margin-top: 330px;
+  margin-left: 40vw;
+  width: calc(6 * var(--clamp-vw, 1vw));
+}
+
+@media (max-width: 767px) {
+  .hero-search-image-group > img:nth-child(5) {
+    margin-top: -105px;
+    margin-left: -2vw;
+    width: 68px;
+  }
+}
+
+.hero-search-image-group > img:nth-child(6) {
+  margin-top: -178px;
+  margin-left: 25vw;
+  width: calc(6.7 * var(--clamp-vw, 1vw));
+}
+
+@media (max-width: 767px) {
+  .hero-search-image-group > img:nth-child(6) {
+    margin-top: 235px;
+    margin-left: 10vw;
+    width: 80px;
+  }
+}
+
+.hero-search-image-group > img:nth-child(7) {
+  margin-top: 220px;
+  margin-left: -33vw;
+  width: calc(19.5 * var(--clamp-vw, 1vw));
+}
+
+.hero-search-image-group > img:nth-child(8) {
+  margin-top: 170px;
+  margin-left: 26vw;
+  width: calc(12 * var(--clamp-vw, 1vw));
+}
+
+.hero-search-image-group > img:nth-child(9) {
+  margin-top: -310px;
+  margin-left: -24.2vw;
+  width: calc(9.5 * var(--clamp-vw, 1vw));
+}
+
+.hero-search-image-group > img:nth-child(10) {
+  margin-top: -270px;
+  margin-left: 6vw;
+  width: calc(18.5 * var(--clamp-vw, 1vw));
+}
+
+.hero-search-image-group > img:nth-child(1n + 11) {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .hero-search-image-group > img:nth-child(1n + 7) {
+    display: none;
+  }
+}
+
+.dummy-text-input > span {
+  grid-area: 1/1;
+}
+
+/* About Section  */
+
+.intro-platform-image{
+  z-index: 10;
+}
+.intro-platform-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.intro-platform-images .intro-platform-image-1 {
+  width: 10%;
+  position: absolute;
+  border-radius: 1rem;
+  overflow: hidden;
+  top: auto;
+  bottom: 15%;
+  left: 10%;
+}
+.intro-platform-images .intro-platform-image-2 {
+  width: 8%;
+  position: absolute;
+  border-radius: 1rem;
+  overflow: hidden;
+  top: auto;
+  bottom: 0%;
+  left: 65%;
+}
+.intro-platform-images .intro-platform-image-3 {
+  width: 20%;
+  position: absolute;
+  border-radius: 1rem;
+  overflow: hidden;
+  top: 0%;
+  left: 28.5%;
+}
+.intro-platform-images .intro-platform-image-4 {
+  width: 15%;
+  position: absolute;
+  border-radius: 1rem;
+  overflow: hidden;
+  top: 20%;
+  right: 10%;
+}
+
+/* after scroll images position */
+
+.platform-images .intro-platform-image-1 {
+    position: absolute;
+    right: auto;
+    left: 0;
+    top: 0;
+    bottom: auto;
+    width: 28.5%;
+}
+.platform-images .intro-platform-image-2 {
+    position: absolute;
+    left: 28.5%;
+    right: auto;
+    top: 0;
+    bottom: auto;
+    width: 14.4%;
+}
+.platform-images .intro-platform-image-3 {
+    position: absolute;
+    left: 28.5%;
+    right: auto;
+    top: 16.6%;
+    bottom: auto;
+    width: 14.4%;
+}
+.platform-images .intro-platform-image-4 {
+    position: absolute;
+    left: auto;
+    right: 28.5%;
+    top: 0;
+    bottom: auto;
+    width: 28.7%;
+}
+.triangle_shape{
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%)
+}
+.hexagon_shape{
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}

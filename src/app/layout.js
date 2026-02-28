@@ -1,5 +1,7 @@
 import "../styles/globals.css";
 import "../styles/fonts.css";
+import "../styles/website.css";
+
 
 export const experimental = {
   viewTransition: true,
