@@ -38,9 +38,9 @@ export default function SiteLayout({ children }) {
           {children}
         </main>
 
-        {/* <footer>
+        <footer>
           <Footer />
-        </footer> */}
+        </footer>
       </LenisScroll>
     </ViewTransitions>
 

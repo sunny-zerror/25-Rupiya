@@ -84,16 +84,16 @@ const About = () => {
                     Built<span className="bg-pattern inline-flex w-16  p-3  mx-1"><svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M27 27L0 54V0L27 27Z" fill="#21935b"></path> <path d="M54 27L27 54V0L54 27Z" fill="#21935b"></path> </svg></span>on the most complete platform for storytelling.</p>
             </div>
 
-            <div className="platform_images_paren w-full center">
-                <div className="w-[80%] aspect-1232/756 bg-[#f5f5f5] rounded-4xl">
-                    <div className="w-[75%] aspect-917/113 p-5">
+            <div className="platform_images_paren w-full center overflow-hidden">
+                <div className="w-[80%] aspect-1232/756 bg-[#f5f5f5] overflow-hidden rounded-4xl">
+                    <div className="w-[75%] aspect-917/113 p-8">
                         <img
                             className="w-full"
                             src="https://cdn.prod.website-files.com/68ad8a274502a69dfd5cd0aa/68ad8a274502a69dfd5cd178_intro-header.svg"
                         />
                     </div>
 
-                    <div className="w-full aspect-1850/888 relative">
+                    <div className="w-full aspect-1850/888 relative overflow-hidden">
                         <div className="platform-images w-full absolute inset-0 z-10"></div>
                         <img
                             className="w-full"
