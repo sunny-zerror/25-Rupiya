@@ -12,6 +12,7 @@ export default function InfiniteMarquee({
     const containerRef = useRef(null);
     const trackRef = useRef(null);
     const isTouchRef = useRef(false);
+    const isPaused = useRef(false);
     const direction = useRef(-1);
 
     const [contentWidth, setContentWidth] = useState(0);
@@ -44,7 +45,7 @@ export default function InfiniteMarquee({
             const delta = (time - lastTime) / 1000;
             lastTime = time;
 
-            if (!isDragging.current) {
+            if (!isDragging.current && !isPaused.current) {
                 position.current += direction.current * speed * delta;
             }
 
@@ -130,9 +131,32 @@ export default function InfiniteMarquee({
         };
     }, [draggable]);
 
+    useEffect(() => {
+        if (!containerRef.current) return;
+
+        const el = containerRef.current;
+
+        const onWheel = (e) => {
+            const horizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+            if (!horizontal) return;
+
+            e.preventDefault();
+
+            velocity.current -= e.deltaX * 0.1;
+        };
+
+        el.addEventListener("wheel", onWheel, { passive: false });
+
+        return () => {
+            el.removeEventListener("wheel", onWheel);
+        };
+    }, []);
+
     return (
         <div
             ref={containerRef}
+            onMouseEnter={() => (isPaused.current = true)}
+            onMouseLeave={() => (isPaused.current = false)}
             role="marquee"
             aria-live="off"
             aria-label={ariaLabel}

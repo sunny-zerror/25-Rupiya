@@ -80,12 +80,12 @@ const About = () => {
 
             <div className=" text-center space-y-10 pb-20">
                 <p className="font-thin uppercase pp_neue text-sm">About us</p>
-                <p className="text-5xl leading-none">A new<span className="bg-pattern inline-flex w-16  p-3  mx-1"><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"> <circle cx="30" cy="30" r="30" fill="#FECC33"></circle> </svg></span>language of <span className="bg-pattern">visual expression.</span> <br />
-                    Built<span className="bg-pattern inline-flex w-16  p-3  mx-1"><svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M27 27L0 54V0L27 27Z" fill="#21935b"></path> <path d="M54 27L27 54V0L54 27Z" fill="#21935b"></path> </svg></span>on the most complete platform for storytelling.</p>
+                <p className="text-5xl ">25 Rupiya<span className="bg-pattern inline-flex w-16  p-3  mx-1"><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"> <circle cx="30" cy="30" r="30" fill="#FECC33"></circle> </svg></span>Productions is a <span className="bg-pattern"> small team </span> <br />
+                    of directors, <span className="bg-pattern inline-flex w-16  p-3  mx-1"><svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M27 27L0 54V0L27 27Z" fill="#21935b"></path> <path d="M54 27L27 54V0L54 27Z" fill="#21935b"></path> </svg></span>editors, and AI tinkerers.</p>
             </div>
 
-            <div className="platform_images_paren w-full center overflow-hidden">
-                <div className="w-[80%] aspect-1232/756 bg-[#f5f5f5] overflow-hidden rounded-4xl">
+            <div className="platform_images_paren w-full center">
+                <div className="w-[80%] aspect-1232/756 bg-[#f5f5f5] rounded-4xl">
                     <div className="w-[75%] aspect-917/113 p-8">
                         <img
                             className="w-full"
@@ -93,7 +93,7 @@ const About = () => {
                         />
                     </div>
 
-                    <div className="w-full aspect-1850/888 relative overflow-hidden">
+                    <div className="w-full aspect-1850/888 relative ">
                         <div className="platform-images w-full absolute inset-0 z-10"></div>
                         <img
                             className="w-full"

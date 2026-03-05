@@ -183,7 +183,7 @@ const Hero = () => {
                 <h1 className='text-9xl font-black uppercase leading-none '>25 Rupiya</h1>
                 <div className="h-full flex items-center pr-36">
 
-                    <p className='text-2xl font-medium pt-12 leading-none'>The Creative Sidekick <br /> Made for  Designers.  <br />Built for Storytellers.</p>
+                    <p className='text-2xl font-medium pt-12 leading-none'>AI-POWERED <br />PRODUCTION HOUSE</p>
 
                 </div>
             </div>
