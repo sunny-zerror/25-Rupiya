@@ -5,33 +5,33 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SERVICES = [
+const process = [
     {
-        title: "MUSIC VIDEOS",
-        img: "https://5mrvgs6onabxy.ok.kimi.link/images/services_s1.jpg",
-        desc: "From concept development to shoot and final delivery, we move at internet speed. High-impact visuals crafted, edited, and posted in days — not dragged out for weeks."
+        title: "BRIEF",
+        img: "https://cdn.prod.website-files.com/68ad8a274502a69dfd5cd0aa/68ad8a274502a69dfd5cd15a_knight-1.avif",
+        desc: "You share the story, references, and deadline. We understand the vision, tone, and platform goals before moving into concept development."
     },
     {
-        title: "BRAND FILMS",
-        img: "https://5mrvgs6onabxy.ok.kimi.link/images/services_s2.jpg",
-        desc: "We build cinematic campaign worlds that feel premium and culturally sharp. Big-screen energy and storytelling — without the bloated production price tag."
+        title: "CONCEPT",
+        img: "https://cdn.prod.website-files.com/68ad8a274502a69dfd5cd0aa/68ad8a274502a69dfd5cd15b_knight-8.avif",
+        desc: "We craft moodboards, visual directions, and storyboards while building the AI pipeline that will drive the production process."
     },
     {
-        title: "AI CONTENT SYSTEMS",
-        img: "https://5mrvgs6onabxy.ok.kimi.link/images/services_s3.jpg",
-        desc: "Scalable character pipelines, visual styles, and modular creative assets. Designed to generate consistent, high-volume content without reinventing the wheel each time."
+        title: "PRODUCE",
+        img: "https://cdn.prod.website-files.com/68ad8a274502a69dfd5cd0aa/68ad8a274502a69dfd5cd157_knight-6.avif",
+        desc: "Shoot, generate, and composite visuals with rapid iterations. A hybrid workflow combining real production and AI to move fast."
     },
     {
-        title: "EDITORIAL & SOCIAL CUTDOWNS",
-        img: "https://5mrvgs6onabxy.ok.kimi.link/images/services_s1.jpg",
-        desc: "Platform-native edits tailored for every feed, format, and algorithm. Short-form versions that keep the original vibe while maximizing reach and retention."
+        title: "DELIVER",
+        img: "https://cdn.prod.website-files.com/68ad8a274502a69dfd5cd0aa/68ad8a274502a69dfd5cd113_knight-3.avif",
+        desc: "Final cut, platform-ready exports, and reusable assets delivered. Optimized for multiple formats so your content keeps working everywhere."
     }
 ];
 
-const StickyServices = () => {
+const StickyProcess = () => {
     const imageRef = useRef(null);
     const wrapperRef = useRef(null);
-    const [currentImg, setCurrentImg] = useState(SERVICES[0].img);
+    const [currentImg, setCurrentImg] = useState("https://cdn.prod.website-files.com/68ad8a274502a69dfd5cd0aa/68ad8a274502a69dfd5cd156_knight-4.avif");
 
     useEffect(() => {
         const slides = gsap.utils.toArray(".serv_slide");
@@ -59,7 +59,7 @@ const StickyServices = () => {
                 ease: "power2.out"
             })
                 .call(() => {
-                    setCurrentImg(SERVICES[index].img);
+                    setCurrentImg(process[index].img);
                 })
                 .to(img, {
                     filter: "blur(0px)",
@@ -77,15 +77,13 @@ const StickyServices = () => {
 
             {/* LEFT (Sticky) */}
             <div className="w-1/2 sticky top-0 h-screen bg-pattern bg-[#30A81D]! flex items-center justify-center">
-                <div className="w-[88%] aspect-square flex items-center justify-center rounded-full bg-[#141414]">
-                    <div className="w-[50%] rounded-lg relative overflow-hidden aspect-4/3">
-                        <img
-                            ref={imageRef}
-                            className="w-full h-full object-cover"
-                            src={currentImg}
-                            alt=""
-                        />
-                    </div>
+                <div className="w-[88%] aspect-square overflow-hidden flex items-center justify-center rounded-full bg-[#141414]">
+                    <img
+                        ref={imageRef}
+                        className="cover"
+                        src={currentImg}
+                        alt=""
+                    />
                 </div>
             </div>
 
@@ -94,7 +92,7 @@ const StickyServices = () => {
 
                 <div className="h-screen space-y-10 flex flex-col justify-center">
                     <p className="text-8xl leading-none">
-                        WHAT WE<br /> BUILD
+                        HOW WE<br /> WORK
                     </p>
                     <p className="text-xl w-[80%]">
                         From concept to final cut—AI-assisted storytelling that scales.
@@ -102,15 +100,16 @@ const StickyServices = () => {
                     </p>
                 </div>
 
-                {SERVICES.map((service, i) => (
+                {process.map((service, i) => (
                     <div
                         key={i}
-                        className="serv_slide h-[25vw] flex flex-col justify-center"
+                        className="serv_slide h-[25vw] flex flex-col justify-center  space-y-5 "
                     >
+                        <p className="font-thin uppercase pp_neue text-sm">Step {i + 1}</p>
                         <p className="text-5xl leading-none">
-                            {i + 1}. {service.title}
+                            {service.title}
                         </p>
-                        <p className="text-xl font-thin leading-tight mt-5">
+                        <p className="text-xl font-thin leading-tight ">
                             {service.desc}
                         </p>
                     </div>
@@ -120,4 +119,4 @@ const StickyServices = () => {
     );
 };
 
-export default StickyServices;
+export default StickyProcess;

@@ -3,7 +3,8 @@ import ClientsMarquee from '@/components/home/ClientsMarquee'
 import Hero from '@/components/home/Hero'
 import KeyProjects from '@/components/home/KeyProjects'
 import PhysicsFall from '@/components/home/PhysicsFall'
-import StickyServices from '@/components/home/StickyServices'
+import Services from '@/components/home/Services'
+import StickyProcess from '@/components/home/StickyProcess'
 import React from 'react'
 
 const HomePage = () => {
@@ -13,8 +14,9 @@ const HomePage = () => {
       <ClientsMarquee/>
       <About/>
       <PhysicsFall/>
-      <StickyServices/>
-      <KeyProjects/>
+      <StickyProcess/>
+      <Services/>
+      {/* <KeyProjects/> */}
     </>
   )
 }

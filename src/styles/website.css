@@ -156,6 +156,7 @@
 .intro-platform-images .intro-platform-image-1 {
   width: 10%;
   position: absolute;
+  aspect-ratio: 16/9;
   border-radius: 1rem;
   overflow: hidden;
   top: auto;
@@ -165,6 +166,7 @@
 .intro-platform-images .intro-platform-image-2 {
   width: 8%;
   position: absolute;
+  aspect-ratio: 16/9;
   border-radius: 1rem;
   overflow: hidden;
   top: auto;
@@ -174,6 +176,7 @@
 .intro-platform-images .intro-platform-image-3 {
   width: 20%;
   position: absolute;
+  aspect-ratio: 16/9;
   border-radius: 1rem;
   overflow: hidden;
   top: 0%;
@@ -182,6 +185,7 @@
 .intro-platform-images .intro-platform-image-4 {
   width: 15%;
   position: absolute;
+  aspect-ratio: 16/9;
   border-radius: 1rem;
   overflow: hidden;
   top: 20%;
@@ -189,39 +193,28 @@
 }
 
 /* after scroll images position */
+.platform-images .intro-platform-image-1{
+    grid-column:1 / span 2;
+    grid-row:1 / span 2;
+}
 
-.platform-images .intro-platform-image-1 {
-    position: absolute;
-    right: auto;
-    left: 0;
-    top: 0;
-    bottom: auto;
-    width: 28.5%;
+.platform-images .intro-platform-image-2{
+    grid-column:3;
+    grid-row:1;
 }
-.platform-images .intro-platform-image-2 {
-    position: absolute;
-    left: 28.5%;
-    right: auto;
-    top: 0;
-    bottom: auto;
-    width: 14.4%;
+
+.platform-images .intro-platform-image-3{
+    grid-column:3;
+    grid-row:2;
 }
-.platform-images .intro-platform-image-3 {
-    position: absolute;
-    left: 28.5%;
-    right: auto;
-    top: 16.6%;
-    bottom: auto;
-    width: 14.4%;
+
+.platform-images .intro-platform-image-4{
+    grid-column:4 / span 2;
+    grid-row:1 / span 2;
 }
-.platform-images .intro-platform-image-4 {
-    position: absolute;
-    left: auto;
-    right: 28.5%;
-    top: 0;
-    bottom: auto; 
-    width: 28.7%;
-}
+
+
+
 .triangle_shape{
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%)
 }
