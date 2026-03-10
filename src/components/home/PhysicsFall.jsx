@@ -215,8 +215,8 @@ export default function PhysicsSection() {
     return (
         <>
             <div ref={sectionRef} className=" physics_fall padding relative w-full h-screen  flex flex-col justify-center  overflow-hidden">
-                <p className="text-8xl leading-none  font-semibold mb-20">
-                    WHO WE <br /> ARE
+                <p className="text-8xl leading-none uppercase  font-semibold mb-20">
+                    WHO <br /> we ARE
                 </p>
                 <p className="w-[25%] text-xl leading-none">
                     Our name is a playful nod to the idea that world-class production doesn&apos;t have to cost a fortune.

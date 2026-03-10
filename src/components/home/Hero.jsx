@@ -179,19 +179,20 @@ const Hero = () => {
 
     return (
         <div ref={root}>
-            <div className=" padding w-full h-[40vh] flex items-end justify-between">
-                <h1 className='text-9xl font-black uppercase leading-none '>25 Rupiya</h1>
-                <div className="h-full flex items-center pr-36">
-
-                    <p className='text-2xl font-medium pt-12 leading-none'>AI-POWERED <br />PRODUCTION HOUSE</p>
-
+            <div className=" padding w-full h-[40vh]  flex items-end justify-between">
+                <h1 className='text-9xl font-black flex flex-col uppercase leading-[.7] '>
+                    25 Rupiya <br />
+                     <span className=' w-full flex justify-end text-xl uppercase'>Production</span>
+                     </h1>
+                <div className="pr-36">
+                    <p className='text-2xl font-medium  leading-none'> AI powered cinematic <br /> production house</p>
                 </div>
             </div>
 
             <div className="w-full h-screen relative">
                 <div className="hero-search-background bg-pattern">
 
-                    <div className="search_btn_paren flex items-center p-2 justify-between absolute top-1/2 left-1/2 w-[50%] h-20 rounded-full bg-[#DFDFDF] -translate-x-1/2 -translate-y-1/2">
+                    <div className="search_btn_paren flex items-center p-2 justify-between z-10 absolute top-1/2 left-1/2 w-[50%] h-20 rounded-full bg-[#DFDFDF] -translate-x-1/2 -translate-y-1/2">
                         <div className="flex items-center pl-7 tracking-wider whitespace-nowrap pp_neue uppercase text-sm h-full relative">
                             {HERO_GROUPS.map(({ term }) => (
                                 <div key={term} className="absolute hero-term opacity-0">

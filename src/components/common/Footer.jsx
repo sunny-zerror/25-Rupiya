@@ -48,10 +48,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <p className="font-thin uppercase pp_neue text-sm">© 25 Rupiya, all rights reserved, 2025</p>
+        <p className="font-thin uppercase pp_neue text-sm">© 25 Rupiya Production, all rights reserved, 2025</p>
 
       <div className="w-full text-center">
-        <p className='text-[18.8vw] whitespace-nowrap leading-none uppercase font-black'>25 Rupiya</p>
+        <p className='text-[8vw] whitespace-nowrap leading-none uppercase font-black'>25 Rupiya Production</p>
       </div>
 
       </div>
