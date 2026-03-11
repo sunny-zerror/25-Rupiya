@@ -1,5 +1,6 @@
 "use client";
 import { useGSAP } from "@gsap/react";
+import { RiCloseLine, RiExpandUpDownFill } from "@remixicon/react";
 import gsap from "gsap";
 import Flip from "gsap/dist/Flip";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -188,17 +189,29 @@ const FeaturedWork = () => {
             <div className="platform_images_paren w-full center">
                 <div className="w-[80%]  bg-[#f5f5f5] rounded-2xl overflow-hidden ">
                     <div className="p-5">
-                        <div className="size-3 aspect-square shrink-0 rounded-full bg-[#D9D9D9]"></div>
-                        <div className="flex w-full py-5  gap-x-10">
+                        
+                        <div className="w-full group flex gap-x-3">
+                            <div className="size-4  cursor-pointer aspect-square center p-[0.1rem] shrink-0 rounded-full bg-[#F85656]">
+                                <RiCloseLine className=" group-hover:opacity-100 opacity-0 transition-all duration-150   " />
+                            </div>
+                            <div className="size-4  cursor-pointer aspect-square center p-[0.1rem] shrink-0 rounded-full bg-[#F9BC4A]">
+                                <span className=" group-hover:opacity-100 opacity-0 transition-all duration-150   -translate-y-[0.05rem] translate-x-[0.025rem]">-</span>
+                            </div>
+                            <div className="size-4  cursor-pointer aspect-square center p-[0.1rem] shrink-0 rounded-full bg-[#39C951]">
+                                <RiExpandUpDownFill className=" group-hover:opacity-100 opacity-0 transition-all duration-150   rotate-45" />
+                            </div>
+
+                        </div>
+                        <div className="flex w-full py-6  gap-x-10">
                             <p className="font-thin uppercase flex items-center gap-x-4 text-xl leading-none">Our Works</p>
-                            <div className=" border-b pb-1 border-black/30 flex items-center justify-between w-[20vw]">
+                            {/* <div className=" border-b pb-1 border-black/30 flex items-center justify-between w-[20vw]">
                                 <p className="opacity-90 text-sm leading-none">Explore More Work</p>
                                 <div className="bg-[#E9E9E9]  px-3 py-1.5  rounded-full center">
                                     <p className="uppercase tracking-wide leading-none translate-y-[.5px]  text-[.5rem] font-thin pp_neue">
                                         ⌘/
                                     </p>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className=" flex  flex-wrap  gap-x-2">
                                 {categories.map((item, i) => (
                                     <div onClick={() => setSelectedCategory(item)} key={i} className={`px-3 py-1  pp_neue text-xs rounded-full  ${selectedCategory === item ? "bg-[#141414] text-white" : "bg-[#E9E9E9]"} transition-all duration-300  `}>
@@ -207,7 +220,7 @@ const FeaturedWork = () => {
                                 ))}
                             </div>
                         </div>
-                        <p className="uppercase text-xs pp_neue">Showing {filteredWorks.length} of  {works.length} works</p>
+                        <p className="uppercase text-xs pp_neue leading-none">Showing {filteredWorks.length} of  {works.length} works</p>
                     </div>
 
                     <div className="w-full grid  grid-cols-7 ">
