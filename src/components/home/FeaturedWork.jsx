@@ -180,8 +180,8 @@ const FeaturedWork = () => {
 
             <div className="intro-platform-images relative w-full h-[30vh] my-20">
                 {works.slice(0, 4).map((item, i) => (
-                    <div onClick={(e) => openWork(e, item)} key={i} className={`intro-platform-image group intro-platform-image-${i + 1} ${selectedCategory === "All" || selectedCategory === item.category ? "opacity-100 grayscale-0 blur-none pointer-events-auto" : "opacity-30 blur-[1px] grayscale-100 pointer-events-none"}  transition-[opacity,filter] duration-300`}>
-                        <img className="group-hover:scale-[.9] transition-all duration-300 cursor-pointer" src={item.img} />
+                    <div onClick={(e) => openWork(e, item)} key={i} className={`intro-platform-image aspect-video group intro-platform-image-${i + 1} ${selectedCategory === "All" || selectedCategory === item.category ? "opacity-100 grayscale-0 blur-none pointer-events-auto" : "opacity-30 blur-[1px] grayscale-100 pointer-events-none"} hover:p-2  transition-[opacity,filter,padding] duration-300`}>
+                        <img className="cover" src={item.img} />
                     </div>
                 ))}
             </div>
@@ -189,7 +189,6 @@ const FeaturedWork = () => {
             <div className="platform_images_paren w-full center">
                 <div className="w-[80%]  bg-[#f5f5f5] rounded-2xl overflow-hidden ">
                     <div className="p-5">
-                        
                         <div className="w-full group flex gap-x-3">
                             <div className="size-4  cursor-pointer aspect-square center p-[0.1rem] shrink-0 rounded-full bg-[#F85656]">
                                 <RiCloseLine className=" group-hover:opacity-100 opacity-0 transition-all duration-150   " />
@@ -229,13 +228,13 @@ const FeaturedWork = () => {
                             <div
                                 key={i}
                                 onClick={(e) => openWork(e, item)}
-                                className={` work w-full aspect-video group cursor-pointer overflow-hidden ${selectedCategory === "All" || selectedCategory === item.category ? "opacity-100 grayscale-0 blur-none pointer-events-auto" : "opacity-30 blur-[1px] grayscale-100 pointer-events-none"}  transition-[opacity,filter] duration-300  `}
+                                className={` work w-full aspect-video group cursor-pointer overflow-hidden hover:p-2 ${selectedCategory === "All" || selectedCategory === item.category ? "opacity-100 grayscale-0 blur-none pointer-events-auto" : "opacity-30 blur-[1px] grayscale-100 pointer-events-none"}  transition-[opacity,filter,padding] duration-300  `}
                                 style={{
                                     gridColumn: `${item.colStart} / span ${item.colSpan || 1}`,
                                     gridRow: `${item.rowStart} / span ${item.rowSpan || 1}`,
                                 }}
                             >
-                                <img src={item.img} className="w-full h-full object-cover group-hover:scale-[0.9] cursor-pointer transition-transform duration-300 " />
+                                <img src={item.img} className="w-full h-full object-cover " />
                             </div>
                         ))}
                     </div>

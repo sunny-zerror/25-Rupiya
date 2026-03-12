@@ -5,27 +5,31 @@ const SERVICES = [
         id: "01",
         title: "MUSIC VIDEOS",
         vid: "/videos/music_vid.mp4",
-        desc: "From concept development to shoot and final delivery, we move at internet speed. High-impact visuals crafted, edited, and posted in days — not dragged out for weeks."
+        desc: "From concept development to shoot and final delivery, we move at internet speed. High-impact visuals crafted, edited, and posted in days — not dragged out for weeks.",
+        bgColor: "#fecc33"
     },
     , {},
     {
         id: "02",
         title: "BRAND FILMS",
         vid: "/videos/brand_film.mp4",
-        desc: "We build cinematic campaign worlds that feel premium and culturally sharp. Big-screen energy and storytelling — without the bloated production price tag."
+        desc: "We build cinematic campaign worlds that feel premium and culturally sharp. Big-screen energy and storytelling — without the bloated production price tag.",
+        bgColor: "#21935b"
     },
     , {},
     {
         id: "03",
         title: "AI CONTENT SYSTEMS",
         vid: "/videos/ai_contant.mp4",
-        desc: "Scalable character pipelines, visual styles, and modular creative assets. Designed to generate consistent, high-volume content without reinventing the wheel each time."
+        desc: "Scalable character pipelines, visual styles, and modular creative assets. Designed to generate consistent, high-volume content without reinventing the wheel each time.",
+        bgColor: "#30a81d"
     },
     {
         id: "04",
         title: "EDITORIAL & SOCIAL CUTDOWNS",
         vid: "/videos/ai_social.mp4",
-        desc: "Platform-native edits tailored for every feed, format, and algorithm. Short-form versions that keep the original vibe while maximizing reach and retention."
+        desc: "Platform-native edits tailored for every feed, format, and algorithm. Short-form versions that keep the original vibe while maximizing reach and retention.",
+        bgColor: "#fecc33"
     }
 ];
 
@@ -44,10 +48,10 @@ const Services = () => {
             </div>
             <div className="w-full grid grid-cols-3 gap-x-5 gap-y-20 padding">
                 {SERVICES.map((service, index) => (
-                    <div key={index} className="">
-                        <div className="w-full aspect-video rounded-xl overflow-hidden">
+                    <div key={index} className=" group">
+                        <div style={{ backgroundColor: service.bgColor }} className="w-full aspect-video rounded-xl hover:p-5 overflow-hidden  transition-all duration-300">
                             {service.vid && (
-                                <video autoPlay loop muted playsInline className='cover' src={service.vid} alt="" />
+                                <video autoPlay loop muted playsInline className='cover rounded-xl ' src={service.vid} alt="" />
                             )}
                         </div>
                         <div className=" pt-2">

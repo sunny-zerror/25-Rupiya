@@ -14,8 +14,8 @@ const HomePage = () => {
       <About/>
       <ClientsMarquee/>
       <Showreel/>
-      <Services/>
       <FeaturedWork/>
+      <Services/>
       <CircularMarquee/>
     </>
   )
