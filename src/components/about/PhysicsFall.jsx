@@ -218,10 +218,10 @@ export default function PhysicsSection() {
                 <p className="text-8xl leading-none uppercase  font-semibold mb-20">
                     WHO <br /> we ARE
                 </p>
-                <p className="w-[25%] text-xl leading-none">
+                <p className="w-[25%] text-xl leading-none font-medium">
                     Our name is a playful nod to the idea that world-class production doesn&apos;t have to cost a fortune.
                 </p>
-                <p className="w-[25%] mt-5 text-xl leading-none">
+                <p className="w-[25%] mt-5 text-xl leading-none font-medium">
                     we bring the same obsessive attention to detail to every project.
                 </p>
                 <div
@@ -246,7 +246,7 @@ function Shape({ shape }) {
     if (shape.type === "pill") {
         return (
             <div
-                className={`${base} ${patternClass} rounded-full text-4xl w-fit whitespace-nowrap text-white font-thin`}
+                className={`${base} ${patternClass} rounded-full text-4xl w-fit whitespace-nowrap text-white font-medium`}
                 style={{
                     padding: "1rem 2rem",
                     backgroundColor: "#000",

@@ -145,7 +145,7 @@
 
 /* About Section  */
 
-.intro-platform-image img{
+.intro-platform-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -190,78 +190,61 @@
 }
 
 /* after scroll images position */
-.platform-images .intro-platform-image-1{
-    grid-column:1 / span 2;
-    grid-row:1 / span 2;
+.platform-images .intro-platform-image-1 {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
 }
 
-.platform-images .intro-platform-image-2{
-    grid-column:3;
-    grid-row:1;
+.platform-images .intro-platform-image-2 {
+  grid-column: 3;
+  grid-row: 1;
 }
 
-.platform-images .intro-platform-image-3{
-    grid-column:3;
-    grid-row:2;
+.platform-images .intro-platform-image-3 {
+  grid-column: 3;
+  grid-row: 2;
 }
 
-.platform-images .intro-platform-image-4{
-    grid-column:4 / span 2;
-    grid-row:1 / span 2;
+.platform-images .intro-platform-image-4 {
+  grid-column: 4 / span 2;
+  grid-row: 1 / span 2;
 }
 
-.preview_fix .intro-platform-image , .preview_fix .work{
+.preview_fix .intro-platform-image,
+.preview_fix .work {
   width: 80%;
   aspect-ratio: 16/9;
   pointer-events: none;
 }
 
-
-.triangle_shape{
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%)
+.triangle_shape {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
-.hexagon_shape{
+.hexagon_shape {
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
 
+.mask-layer {
+  --x: 0px;
+  --y: 0px;
+  --size: 30px;
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+  position: absolute;
+  inset: 0;
+  background: black;
+  color: white;
+  pointer-events: none;
+  z-index: 90;
 
+  -webkit-mask-image: url("/icons/star.svg");
+  mask-image: url("/icons/star.svg");
 
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 
-.main{
-  height: 100vh;
+  -webkit-mask-position: calc(var(--x) - var(--size)/2) calc(var(--y) - var(--size)/2);
+  mask-position: calc(var(--x) - var(--size)/2) calc(var(--y) - var(--size)/2);
 
-  .mask, .body{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    font-size: 64px;
-    line-height: 66px;
-    cursor: default;
-    
-    p{
-      width: 1000px;
-      padding:40px;
-    }
-  }
-
-  .mask{
-    mask-image: url('../../public/images/mask.svg');
-    mask-repeat: no-repeat;
-    mask-size: 40px;
-    background: black;
-    position: absolute;
-    color: white;
-  }
+  -webkit-mask-size: var(--size);
+  mask-size: var(--size);
 }

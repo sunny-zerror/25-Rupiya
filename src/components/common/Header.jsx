@@ -42,10 +42,10 @@ const Header = () => {
             <div className="flex items-center justify-between">
               <div className="text-2xl flex flex-col gap-y-5">
                 {navLinks.map((item, index) => (
-                  <Link key={index} onClick={() => setOpenMenu(false)} href={item.href} className='cursor-pointer  transition-all duration-300 hover:underline'>{item.name}</Link>
+                  <Link key={index} onClick={() => setOpenMenu(false)} href={item.href} className='cursor-pointer font-medium transition-all duration-300 hover:underline'>{item.name}</Link>
                 ))}
               </div>
-              <div className="w-1/2 bg-yellow-200 aspect-video">
+              <div className="w-1/2  aspect-video">
                 <video loop autoPlay muted playsInline className='cover' src="/videos/showreel_compress.mp4"></video>
               </div>
             </div>

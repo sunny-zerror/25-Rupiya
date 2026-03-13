@@ -180,12 +180,12 @@ const Hero = () => {
     return (
         <div ref={root}>
             <div className=" padding w-full h-[40vh]  flex items-end justify-between">
-                <h1 className='text-9xl font-black flex flex-col uppercase leading-[.7] '>
+                <h1 className='text-9xl font-semibold flex flex-col uppercase leading-[.7] '>
                     25 Rupiya <br />
-                     <span className=' w-full flex justify-end text-[1.828rem] leading-9 uppercase'>Production</span>
-                     </h1>
+                    <span className=' w-full flex justify-end text-[1.828rem] leading-9 uppercase'>Production</span>
+                </h1>
                 <div className="pr-36">
-                    <p className='text-2xl font-medium  leading-none'> AI powered cinematic <br /> production house</p>
+                    <p className='mask-trigger text-2xl font-medium  leading-none'> AI powered cinematic production<br /> built different.</p>
                 </div>
             </div>
 

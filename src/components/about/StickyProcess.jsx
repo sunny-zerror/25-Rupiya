@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,7 +34,7 @@ const StickyProcess = () => {
     const wrapperRef = useRef(null);
     const [currentVid, setCurrentVid] = useState("/videos/process.mp4");
 
-    useEffect(() => {
+    useGSAP(() => {
         const slides = gsap.utils.toArray(".serv_slide");
 
         slides.forEach((slide, i) => {
@@ -70,7 +71,7 @@ const StickyProcess = () => {
         }
 
         return () => ScrollTrigger.getAll().forEach(t => t.kill());
-    }, []);
+    });
 
     return (
         <div ref={wrapperRef} className="w-full h-[calc(100vh+103vw+10rem)] flex">
@@ -95,7 +96,7 @@ const StickyProcess = () => {
                     <p className="text-8xl uppercase font-semibold leading-none">
                         Why <br /> Choose <br />Us
                     </p>
-                    <p className="text-xl w-[80%]">
+                    <p className="text-xl w-[80%] ">
                         From concept to final cut—AI-assisted storytelling that scales.
                         Fast turnarounds, cinematic finish.
                     </p>
@@ -107,10 +108,10 @@ const StickyProcess = () => {
                         className="serv_slide h-[25vw] flex flex-col justify-center  space-y-5 "
                     >
                         <p className="font-thin uppercase pp_neue text-sm">Step {i + 1}</p>
-                        <p className="text-5xl leading-none">
+                        <p className="text-5xl leading-none font-medium">
                             {service.title}
                         </p>
-                        <p className="text-xl font-thin leading-tight ">
+                        <p className="text-xl  leading-tight ">
                             {service.desc}
                         </p>
                     </div>
