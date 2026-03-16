@@ -1,32 +1,34 @@
-'use client'
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import useMousePosition from './../../utils/useMousePosition';
+"use client";
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import React from 'react'
 
-export default function Home() {
-    const [isHovered, setIsHovered] = useState(false);
-    const { x, y } = useMousePosition();
-    const size = isHovered ? 400 : 40;
+const page = () => {
+
+    useGSAP(()=>{
+        gsap.to(".blue_div",{
+            opacity:0,
+            duration:1,
+            delay:1,
+            onComplete:()=>{
+                gsap.to(".blue_div",{
+                    display:none
+                })
+            }
+        })
+    })
 
     return (
-        <main className="main">
-            <motion.div
-                className="mask"
-                animate={{
-                    WebkitMaskPosition: `${x - (size / 2)}px ${y - (size / 2)}px`,
-                    WebkitMaskSize: `${size}px`,
-                }}
-                transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
-            >
-                <p onMouseEnter={() => { setIsHovered(true) }} onMouseLeave={() => { setIsHovered(false) }}>
-                    A visual designer - with skills that haven't been replaced by A.I (yet) - making good shit only if the paycheck is equally good.
-                </p>
-            </motion.div>
+        <>
+            <div className="w-full h-screen relative   ">
 
-            <div className="body">
-                <p>I'm a selectively skilled product designer with strong focus on producing high quality & impactful digital experience.</p>
+                <div className=" blue_div w-full h-screen noise_bg pointer-events-none bg-blue-500  absolute top-0 left-0 z-20 "></div>
+                <img className='cover brightness-50' src="https://images.unsplash.com/photo-1771926927841-1a81a1094b81?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                <h1 className=' absolute text-white text-5xl z-50 bottom-0 left-1/2 -translate-x-1/2'>Lorem ipsum dolor sit amet.</h1>
+
             </div>
-
-        </main>
+        </>
     )
 }
+
+export default page

@@ -1,25 +1,123 @@
 import InfiniteParallax from "../effects/InfiniteParallax";
 
+const worksData = [
+    {
+        id: 1,
+        title: "savoy",
+        year: "2015",
+        img: "https://cdn.prod.website-files.com/673306db3b111afa559bc378/67923c109ebd8d8a03e4960c_moon.jpg",
+        tags: ["Video Editing", "Script Writing", "Art Direction"]
+    },
+    {
+        id: 2,
+        title: "Outsider freud",
+        year: "2016",
+        img: "https://cdn.prod.website-files.com/673306db3b111afa559bc378/675eb903f604a7a856c87467_taboo.webp",
+        tags: ["Motion Design", "Storytelling"]
+    },
+    {
+        id: 3,
+        title: "Moon in the 12th House",
+        year: "2017",
+        img: "https://cdn.prod.website-files.com/673306db3b111afa559bc378/67923c37a45465ae82ee3f8b_kafka.jpg",
+        tags: ["Art Direction", "Video Editing", "Brand Film"]
+    },
+    {
+        id: 4,
+        title: "Taboo",
+        year: "2018",
+        img: "https://cdn.prod.website-files.com/673306db3b111afa559bc378/67923c1fa550c616a38131b9_project.jpg",
+        tags: ["Script Writing", "Storytelling"]
+    },
+    {
+        id: 5,
+        title: "Kafka's Revenge",
+        year: "2019",
+        img: "https://cdn.prod.website-files.com/673306db3b111afa559bc378/67923c551123732db723b050_ana.jpg",
+        tags: ["Motion Design", "Art Direction"]
+    },
+    {
+        id: 6,
+        title: "Ana Maxim",
+        year: "2020",
+        img: "https://cdn.prod.website-files.com/673306db3b111afa559bc378/67923c44b96499e7828b3f02_freud.jpg",
+        tags: ["Video Editing", "Storytelling", "Color Grading"]
+    },
+];
+
 export default function WorkListing() {
     return (
-        <div className="w-full h-screen center ">
-            <InfiniteParallax speed={80} draggable>
+        <div className=" relative w-full h-screen center bg-black">
+            <div className="w-full h-full z-10 absolute top-0 left-0 gradient_bg pointer-events-none"></div>
+            <InfiniteParallax draggable>
                 <div className="w-full  pointer-events-none">
-                    <div className=" w-[90vw] mt-10 h-[70vh] overflow-hidden rounded-4xl  select-none">
-                        <img className="cover" src="https://images.unsplash.com/photo-1771926927841-1a81a1094b81?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-                    </div>
-                    <div className=" w-[90vw] mt-10 h-[70vh] overflow-hidden rounded-4xl  select-none">
-                        <img className="cover" src="https://images.unsplash.com/photo-1702460858357-bdb7d20387aa?q=80&w=685&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-                    </div>
-                    <div className=" w-[90vw] mt-10 h-[70vh] overflow-hidden rounded-4xl  select-none">
-                        <img className="cover" src="https://images.unsplash.com/photo-1718703357148-35ae8d58a6e6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D" alt="" />
-                    </div>
-                    <div className=" w-[90vw] mt-10 h-[70vh] overflow-hidden rounded-4xl  select-none">
-                        <img className="cover" src="https://images.unsplash.com/photo-1750545337073-c320c4e0e251?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D" alt="" />
-                    </div>
-                    <div className=" w-[90vw] mt-10 h-[70vh] overflow-hidden rounded-4xl  select-none">
-                        <img className="cover" src="https://images.unsplash.com/photo-1564220534-b8f363052ab7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8" alt="" />
-                    </div>
+                    {worksData.map((item, i) => (
+                        <div key={i} className="parallax-slide text-white relative w-[90vw] mt-10 h-[70vh] overflow-hidden rounded-4xl  select-none">
+                            <div className="w-full top-0 left-0 z-10 flex justify-between absolute p-10 h-full">
+                                <div className="h-full flex flex-col justify-between">
+                                    <p className="font-medium text-2xl">{item.year}</p>
+                                    <div className="">
+                                        <p className="pp_neue uppercase text-sm">category</p>
+                                        <h2 className="text-5xl uppercase w-[25vw] font-semibold">{item.title}</h2>
+                                    </div>
+                                </div>
+                                <div className="h-full flex flex-col justify-between">
+                                    <div className="pp_neue uppercase">
+                                        {item.tags.map((tag, i) => (
+                                            <div key={i} className="tag overflow-hidden">
+                                                <span className="block">{tag}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <button className="pp_neue relative text-sm uppercase w-32 h-10 bg-transparent border-none outline-none">
+
+                                        <div className="w-full relative z-10 flex items-center">
+                                            <div className="w-[70%]">
+                                                <p>Explore</p>
+                                            </div>
+
+                                            <div className="w-[30%] center">
+                                                <div className="w-4">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        fill="none"
+                                                        viewBox="0 0 11 10"
+                                                        className="arrow-r"
+                                                    >
+                                                        <path
+                                                            fill="currentColor"
+                                                            d="M4.481.005a6.65 6.65 0 0 1 6.46 4.659c.078.229.08.479-.003.706C10.302 7.105 8.318 10 4.48 10V8.39c.941.127 2.922-.257 4.442-2.603H0V4.208h8.938c-.756-1.229-2.216-2.78-4.457-2.78V.006Z"
+                                                        />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="absolute inset-0 pointer-events-none">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 142 44"
+                                                width="100%"
+                                                height="100%"
+                                            >
+                                                <path
+                                                    stroke="white"
+                                                    fill="transparent"
+                                                    d="M5 1h90c0 1 .6 3 3 3s3-2 3-3h36c0 3.2 2.667 4.144 4 4.216V39c-3.2 0-4 2.667-4 4h-35c0-1.333-.8-4-4-4s-4 2.667-4 4H5c0-3.6-2.667-4.167-4-4V5c3.2 0 4-2.667 4-4Z"
+                                                />
+                                                <path
+                                                    stroke="currentColor"
+                                                    d="M98 4.5v34"
+                                                    strokeDasharray="4"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                            <img  data-parallax="0.4" className="parallax-img" src={item.img} alt="" />
+                        </div>
+                    ))}
                 </div>
             </InfiniteParallax>
         </div>

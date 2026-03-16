@@ -248,3 +248,42 @@
   -webkit-mask-size: var(--size);
   mask-size: var(--size);
 }
+
+.parallax-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(2.2);
+  will-change: transform;
+}
+
+.gradient_bg{
+  overflow: hidden;
+background: linear-gradient(
+  to bottom,
+  black 0%,
+  black 2%,
+  transparent 30%,
+  transparent 70%,
+  black 98%,
+  black 100%
+);
+}
+.gradient_bg::after {
+  content: "";
+  position: absolute;
+  inset: -50%;              
+  background-image: url("../../public/images/noise.webp");
+  background-repeat: repeat;
+  opacity: 0.1;              
+  pointer-events: none;
+  animation: noiseMove .5s steps(4) infinite;
+}
+
+@keyframes noiseMove {
+  0%   { transform: translate3d(0,0,0); }
+  25%  { transform: translate3d(-5%, 5%,0); }
+  50%  { transform: translate3d(5%, -5%,0); }
+  75%  { transform: translate3d(-5%, -5%,0); }
+  100% { transform: translate3d(5%, 5%,0); }
+}

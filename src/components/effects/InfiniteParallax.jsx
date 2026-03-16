@@ -20,7 +20,6 @@ export default function InfiniteParallax({
   const isDragging = useRef(false);
   const lastY = useRef(0);
 
-  /* Measure height */
   useEffect(() => {
     if (!trackRef.current) return;
 
@@ -32,26 +31,40 @@ export default function InfiniteParallax({
     return () => observer.disconnect();
   }, []);
 
-  /* Animation loop (ONLY inertia, no auto scroll) */
   useEffect(() => {
     if (!contentHeight) return;
 
     let raf;
 
+    const updateParallax = () => {
+      const viewportCenter = window.innerHeight / 2;
+      const slides = trackRef.current.querySelectorAll(".parallax-slide");
+
+      slides.forEach((slide) => {
+        const img = slide.querySelector("img");
+        if (!img) return;
+
+        const rect = slide.getBoundingClientRect();
+        const slideCenter = rect.top + rect.height / 2;
+        const distance = slideCenter - viewportCenter;
+
+        img.style.transform = `translateY(${distance * -0.5}px) scale(1.3)`;
+      });
+    };
+
     const animate = () => {
       if (!isDragging.current) {
         position.current += velocity.current;
-        velocity.current *= isTouchRef.current ? 0.92 : 0.95;
+        velocity.current *= isTouchRef.current ? 0.92 : 0.96;
       }
 
-      // infinite loop bounds
-      if (position.current <= -contentHeight) {
-        position.current += contentHeight;
-      } else if (position.current >= 0) {
-        position.current -= contentHeight;
-      }
+      if (position.current <= -contentHeight) position.current += contentHeight;
+      else if (position.current >= 0) position.current -= contentHeight;
 
       trackRef.current.style.transform = `translateY(${position.current}px)`;
+
+      updateParallax();
+
       raf = requestAnimationFrame(animate);
     };
 
@@ -59,7 +72,23 @@ export default function InfiniteParallax({
     return () => cancelAnimationFrame(raf);
   }, [contentHeight]);
 
-  /* Drag logic */
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const el = containerRef.current;
+
+    const onWheel = (e) => {
+      e.preventDefault();
+      velocity.current += -e.deltaY * 0.05;
+    };
+
+    el.addEventListener("wheel", onWheel, { passive: false });
+
+    return () => {
+      el.removeEventListener("wheel", onWheel);
+    };
+  }, []);
+
   useEffect(() => {
     if (!draggable || !containerRef.current) return;
 
@@ -70,7 +99,6 @@ export default function InfiniteParallax({
 
       isDragging.current = true;
       lastY.current = e.clientY;
-
       isTouchRef.current = e.pointerType === "touch";
 
       el.setPointerCapture(e.pointerId);
@@ -83,10 +111,9 @@ export default function InfiniteParallax({
       if (!isDragging.current) return;
 
       const delta = e.clientY - lastY.current;
-
       const multiplier = isTouchRef.current ? 2.5 : 0.6;
-      velocity.current = delta * multiplier;
 
+      velocity.current = delta * multiplier;
       position.current += delta;
 
       lastY.current = e.clientY;
@@ -97,7 +124,7 @@ export default function InfiniteParallax({
 
       try {
         el.releasePointerCapture(e.pointerId);
-      } catch {}
+      } catch { }
 
       el.classList.remove("cursor-grabbing");
       el.classList.add("cursor-grab");
@@ -124,9 +151,8 @@ export default function InfiniteParallax({
       role="marquee"
       aria-live="off"
       aria-label={ariaLabel}
-      className={`h-full overflow-y-clip marquee-no-select ${
-        draggable ? "cursor-grab" : ""
-      } ${className}`}
+      className={`h-full overflow-y-clip marquee-no-select ${draggable ? "cursor-grab" : ""
+        } ${className}`}
     >
       <div
         ref={trackRef}
