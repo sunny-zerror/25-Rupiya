@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
 
         <div className="w-full justify-between flex items-center">
-          <p className="font-thin uppercase pp_neue text-sm">Developed by zerror studios</p>
+          {/* <p className="font-thin uppercase pp_neue text-sm">Developed by zerror studios</p> */}
           <p className="font-thin uppercase pp_neue text-sm">© 25 Rupiya Production, all rights reserved, {new Date().getFullYear()}</p>
         </div>
 
